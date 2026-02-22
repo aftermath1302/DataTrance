@@ -6,9 +6,15 @@
 
 namespace PortableNet {
 
+// Platform-specific includes and definitions for cross-platform compatibility
+// This header provides portable byte-order conversion functions
+
 inline uint16_t swapBytes16(uint16_t value) {
     return ((value & 0xFF00) >> 8) | ((value & 0x00FF) << 8);
 }
+
+// Portable byte order conversion
+// Works on any platform without requiring system headers
 
 inline uint32_t swapBytes32(uint32_t value) {
     return ((value & 0xFF000000) >> 24) |
